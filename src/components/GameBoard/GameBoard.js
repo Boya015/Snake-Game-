@@ -1,5 +1,5 @@
 // src/components/GameBoard/GameBoard.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Snake from '../Snake/Snake';
 import Food from '../Food/Food';
 import './GameBoard.css';
@@ -48,7 +48,7 @@ const GameBoard = ({ setScore, endGame }) => {
     setSnakeDots(newSnake);
   };
 
-  const moveSnake = () => {
+  const moveSnake = useCallback(() => {
     let dots = [...snakeDots];
     let head = dots[dots.length - 1];
 
@@ -76,7 +76,7 @@ const GameBoard = ({ setScore, endGame }) => {
     checkIfOutOfBorders(head);
     checkIfCollapsed(dots);
     checkIfEat(head);
-  };
+  }, [snakeDots, direction, checkIfOutOfBorders, checkIfCollapsed, checkIfEat]);
 
   const onKeyDown = (e) => {
     switch (e.key) {
@@ -104,7 +104,7 @@ const GameBoard = ({ setScore, endGame }) => {
       clearInterval(interval);
       document.removeEventListener('keydown', onKeyDown);
     };
-  }, [snakeDots, direction]);
+  }, [moveSnake]);
 
   return (
     <div className="game-board">
