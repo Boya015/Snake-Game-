@@ -1,0 +1,30 @@
+/* src/components/Introduction/Introduction.css */
+.introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+  }
+  
+  .introduction h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .introduction button {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .introduction button:hover {
+    background-color: #21a1f1;
+  }
+  

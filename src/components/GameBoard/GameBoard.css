@@ -1,0 +1,9 @@
+/* src/GameBoard.css */
+.game-board {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #000;
+    border: 2px solid #61dafb;
+  }

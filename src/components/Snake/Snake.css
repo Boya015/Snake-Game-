@@ -1,0 +1,7 @@
+/* src/Snake.css */
+.snake {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #61dafb;
+  }
